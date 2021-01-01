@@ -1,10 +1,7 @@
 class Show < ActiveRecord::Base
 
   def highest_rating
-    Show.where("rating").maximum
+    Show.maximum(:rating)
   end
 
 end
-
-#
-# .where("release_date > 2002").order(release_date: :desc)
